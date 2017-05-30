@@ -21,12 +21,10 @@
       area.setAttribute("class", "ItemListLayout_container");
       div.appendChild(area);
       task.containers.push(area);
-      if (task.content && task.content.type === "component") {
-        var _task = {
-          container : area,
-          data : data[i]
-        }
-        webCpu.render(task.content.value, _task);
+      if (data[i].component) {  
+		var task = data[i].task || {};
+		task.container = area;
+        webCpu.render(data[i].component, data[i].task, data[i].path);
       }
     }
   });
