@@ -22,9 +22,9 @@
       div.appendChild(area);
       task.containers.push(area);
       if (data[i].component) {  
-		var task = data[i].task || {};
-		task.container = area;
-        webCpu.render(data[i].component, data[i].task, data[i].path);
+		var cTask = data[i].task || {};
+		cTask.container = area;
+        webCpu.render(data[i].component, cTask, data[i].path || (webCpu["ItemListLayout"].config && webCpu["ItemListLayout"].config.path));
       }
     }
   });

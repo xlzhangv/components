@@ -1,10 +1,8 @@
-var listLayoutTask = {
-  promise: {
-	beforeRender: function(container, data, task) {
-	  
-	}  
-  },	
-  data : [ 1, 2, 3, 4, 5, 6, 7, 8 ],
+锘縱ar listLayoutTask = {
+  promise : {
+    beforeRender : function (container, data, task) {}
+  },
+  data : [1, 2, 3, 4, 5, 6, 7, 8],
   taskType : "single",
   column : 2,
   ratio : 0.5,
@@ -19,6 +17,11 @@ var navPanelTask = {
       }
     }
   },
-  data : ["选项卡1", "选项卡2", "选项卡3"],
+  data : ["Nav1", "Nav2", "Nav3"],
   taskType : "single"
+}
+
+listLayoutTask.data[0] = {
+  component : "NavPanel",
+  task : navPanelTask
 }
